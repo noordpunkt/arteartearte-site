@@ -2,20 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Arte";
+  src: url("/fonts/Brown-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #FFFFFF; /* Adjust this color to fit the gradient */
+  --background: linear-gradient(135deg, #4a00e0, #ff0080, #ff8c00, #ffd700); /* Gradient recreated */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #121212;
     --foreground: #ededed;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #190095, #3C14FF, #1E90FF, #87CEFA);
+  font-family: "Arte", sans-serif;
 }

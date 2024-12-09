@@ -8,9 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        'half': '0.5px',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'dodger-blue': '#1E90FF',
       },
     },
   },
