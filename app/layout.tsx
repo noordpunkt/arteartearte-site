@@ -50,6 +50,28 @@ export default function RootLayout({
           />
         </div>
 
+        {/* Art and Music Section */}
+        <div className="h-screen grid grid-cols-1 sm:grid-cols-2">
+          {/* Left Column (Text) */}
+          <div className="flex flex-col items-start justify-center px-8">
+            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
+              Art & Beats.
+            </h1>
+            <p className="text-xl text-white text-start sm:text-left">
+              Live music and art performances.
+            </p>
+          </div>
+
+          {/* Right Column (Image) */}
+          <div className="flex items-center justify-center">
+            <img
+              src="/musicapero.svg"
+              alt="Apero"
+              className="w-full p-12"
+            />
+          </div>
+        </div>
+
         {/* Apero Section */}
         <div className="h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#FF63DD]">
           {/* Left Column (Image with Animation) */}
@@ -60,17 +82,6 @@ export default function RootLayout({
             <img
               src="/vin.svg"
               alt="Apero"
-            />
-            {/* Animated Persil */}
-            <img
-              src="/canape.svg"
-              alt="canape"
-              className={`absolute w-44 h-auto transform transition-transform duration-1000 delay-4000 ${isInView ? "translate-x-40 opacity-100" : "-translate-x-32 opacity-0"
-                }`}
-              style={{
-                bottom: "26%", // Align the bottom of the canapé with the bottom of its parent
-                left: "0", // Adjust horizontal position as needed
-              }}
             />
           </div>
 
@@ -84,28 +95,6 @@ export default function RootLayout({
               <br />
               Buvette sur place.
             </p>
-          </div>
-        </div>
-
-        {/* Art and Music Section */}
-        <div className="h-screen grid grid-cols-1 sm:grid-cols-2">
-          {/* Left Column (Text) */}
-          <div className="flex flex-col items-start justify-center px-8">
-            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
-              Art, Music, Design.
-            </h1>
-            <p className="text-xl text-white text-start sm:text-left">
-              Share stories, and connect.
-            </p>
-          </div>
-
-          {/* Right Column (Image) */}
-          <div className="flex items-center justify-center">
-            <img
-              src="/musicapero.svg"
-              alt="Apero"
-              className="w-full p-12"
-            />
           </div>
         </div>
 
