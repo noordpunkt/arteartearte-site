@@ -149,15 +149,13 @@ export default function RootLayout({
               </p>
             </div>
           </div>
-        
         </div>
+        <footer className="w-full bg-[#0f0e18] text-center text-white p-24">
+            <p className="text-sm sm:text-base">
+              &copy; Copyright 2024/2025. Arte Arte Arte. 45 Avenue Georges Clemenceau, Nice, France.
+            </p>
+          </footer>
         {children}
-      {/* Footer */}
-      <footer className="w-full bg-[#0f0e18] text-center text-white py-24">
-        <p className="text-sm sm:text-base">
-          © Copyright 2024/2025. Arte Arte Arte. 45 Avenue Georges Clemenceau, Nice, France.
-        </p>
-      </footer>
       </body>
     </html>
   );
