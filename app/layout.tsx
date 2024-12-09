@@ -63,17 +63,17 @@ export default function RootLayout({
           {/* Left Column (Text) */}
           <div className="flex flex-col items-start justify-center px-8">
             <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
-              Share stories, and connect.
+              Art, Music, Design.
             </h1>
             <p className="text-xl text-white text-start sm:text-left">
-              Art, music, design, and literature.
+              Share stories, and connect.
             </p>
           </div>
 
           {/* Right Column (Image) */}
           <div className="flex items-center justify-center">
             <img
-              src="/aperolapin.svg"
+              src="/musicapero.svg"
               alt="Apero"
               className="w-full p-12"
             />
@@ -82,6 +82,9 @@ export default function RootLayout({
 
         <div className="h-screen flex flex-col bg-[#201b37] justify-center items-center">
           <div className="w-1/2">
+          <h1 className="text-white text-4xl sm:text-6xl font-bold text-left sm:text-left mb-4">
+            Make connections.
+            </h1>
             <p className="text-xl text-white text-start sm:text-left">
               Un rendez-vous mensuel au cœur de Nice où les artistes se réunissent pour se connecter, partager et s&apos;inspirer.
               A monthly gathering in the heart of Nice where artists come together to connect, share, and inspire.
