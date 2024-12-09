@@ -51,14 +51,14 @@ export default function RootLayout({
         </div>
 
         {/* Art and Music Section */}
-        <div className="h-screen grid grid-cols-1 sm:grid-cols-2">
+        <div className="h-1/2 sm:h-screen grid grid-cols-1 sm:grid-cols-2">
           {/* Left Column (Text) */}
           <div className="flex flex-col items-start justify-center px-8">
-            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
+            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mt-12">
               Art & Beats.
             </h1>
             <p className="text-xl text-white text-start sm:text-left">
-              Live music and art performances.
+              Ambient music and art performances & talks.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default function RootLayout({
         </div>
 
         {/* Apero Section */}
-        <div className="h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#FF63DD]">
+        <div className="h-1/2 sm:h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#FF63DD]">
           {/* Left Column (Image with Animation) */}
           <div
             className={`flex items-center justify-center transition-transform duration-700 ${isInView ? "translate-x-0" : "-translate-x-full"
@@ -86,7 +86,7 @@ export default function RootLayout({
           </div>
 
           {/* Right Column (Text) */}
-          <div className="flex flex-col items-start justify-center px-8">
+          <div className="flex flex-col items-start justify-center px-8 pb-12">
             <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
               Apéro au cœur de Nice.
             </h1>
