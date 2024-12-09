@@ -83,7 +83,7 @@ export default function RootLayout({
         <div className="h-screen flex flex-col bg-[#201b37] justify-center items-center">
           <div className="w-1/2">
             <p className="text-xl text-white text-start sm:text-left">
-              Un rendez-vous mensuel au cœur de Nice où les artistes se réunissent pour se connecter, partager et s'inspirer.
+              Un rendez-vous mensuel au cœur de Nice où les artistes se réunissent pour se connecter, partager et s&apos;inspirer.
               A monthly gathering in the heart of Nice where artists come together to connect, share, and inspire.
             </p>
           </div>
