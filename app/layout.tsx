@@ -78,25 +78,28 @@ export default function RootLayout({
           />
         </div>
 
-        {/* Art and Music Section */}
-        <div className="h-1/2 sm:h-screen grid grid-cols-1 sm:grid-cols-2">
-          {/* Left Column (Text) */}
-          <div className="flex flex-col items-start justify-center px-8">
-            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mt-12">
-              Art & Beats.
+        {/* Connections Section */}
+        <div className="h-1/2 sm:h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#3C14FF]">
+          {/* Left Column (Image with Animation) */}
+          <div
+            className={`flex items-center justify-center transition-transform duration-700 ${isInView ? "translate-x-0" : "-translate-x-full"
+              }`}
+          >
+            <img
+              src="/connections.svg"
+              alt="Connections"
+            />
+          </div>
+          {/* Right Column (Text) */}
+          <div className="flex flex-col items-start justify-center px-8 pb-12">
+            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
+              Make connections.
             </h1>
             <p className="text-xl text-white text-start sm:text-left">
-              Ambient music and art performances & talks.
+              Un rendez-vous mensuel au cœur de Nice où les artistes se réunissent pour
+              se connecter, partager et s&apos;inspirer. <br></br><br></br>
+              A monthly gathering in the heart of Nice where artists come together to connect, share, and inspire.
             </p>
-          </div>
-
-          {/* Right Column (Image) */}
-          <div className="flex items-center justify-center">
-            <img
-              src="/disco.svg"
-              alt="Music"
-              className="w-full p-12 animate-spin-slow"
-            />
           </div>
         </div>
 
@@ -125,36 +128,33 @@ export default function RootLayout({
             </p>
           </div>
         </div>
+        
+        {/* Art and Music Section */}
+        <div className="h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#3C14FF]">
+          {/* Left Column (Text) */}
+          <div className="flex flex-col items-start justify-center px-8">
+            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mt-12">
+              Art & Beats.
+            </h1>
+            <p className="text-xl text-white text-start sm:text-left">
+              Ambient music and art performances & talks.
+            </p>
+          </div>
 
-        {/* Connections Section */}
-        <div className="h-screen flex flex-col bg-[#15121e] justify-center items-center">
-          <div className="flex flex-col sm:flex-row w-full sm:w-1/2 p-12 items-start">
-            {/* Plug Icon */}
-            <div className="mb-6">
-              <img
-                src="/connections.svg"
-                alt="connections"
-                className="w-16 mr-6 sm:w-44"
-              />
-            </div>
-            {/* Text Section */}
-            <div>
-              <h1 className="text-white text-4xl sm:text-6xl font-bold text-left sm:text-left mb-4">
-                Make connections.
-              </h1>
-              <p className="text-xl text-white text-start sm:text-left">
-                Un rendez-vous mensuel au cœur de Nice où les artistes se réunissent pour
-                se connecter, partager et s&apos;inspirer. A monthly gathering in the
-                heart of Nice where artists come together to connect, share, and inspire.
-              </p>
-            </div>
+          {/* Right Column (Image) */}
+          <div className="flex items-center justify-center">
+            <img
+              src="/disco.svg"
+              alt="Music"
+              className="w-full p-12 animate-spin-slow"
+            />
           </div>
         </div>
         <footer className="w-full bg-[#0f0e18] text-center text-white p-24">
-            <p className="text-sm sm:text-base">
-              &copy; Copyright 2024/2025. Arte Arte Arte. 45 Avenue Georges Clemenceau, Nice, France.
-            </p>
-          </footer>
+          <p className="text-sm sm:text-base">
+            &copy; Copyright 2024/2025. Arte Arte Arte. 45 Avenue Georges Clemenceau, Nice, France.
+          </p>
+        </footer>
         {children}
       </body>
     </html>
