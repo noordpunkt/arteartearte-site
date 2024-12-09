@@ -36,13 +36,13 @@ export default function RootLayout({
           />
         </div>
 
-        <div className="h-screen grid grid-cols-1 sm:grid-cols-2 border-t-half border-b-half border-white">
+        <div className="h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#FF63DD]">
           {/* Left Column (Image) */}
           <div className="flex items-center justify-center">
             <img
-              src="/apero.png"
-              alt="Image"
-              className="w-full h-auto max-w-md" // Adjust size as needed
+              src="/aperolapin.svg"
+              alt="Apero"
+              className="w-full p-12"
             />
           </div>
 
@@ -73,10 +73,19 @@ export default function RootLayout({
           {/* Right Column (Image) */}
           <div className="flex items-center justify-center">
             <img
-              src="/apero.png"
-              alt="Image"
-              className="w-full h-auto max-w-md"
+              src="/aperolapin.svg"
+              alt="Apero"
+              className="w-full p-12"
             />
+          </div>
+        </div>
+
+        <div className="h-screen flex flex-col bg-[#201b37] justify-center items-center">
+          <div className="w-1/2">
+            <p className="text-xl text-white text-start sm:text-left">
+              Un rendez-vous mensuel au cœur de Nice où les artistes se réunissent pour se connecter, partager et s'inspirer.
+              A monthly gathering in the heart of Nice where artists come together to connect, share, and inspire.
+            </p>
           </div>
         </div>
 
