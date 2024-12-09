@@ -54,14 +54,23 @@ export default function RootLayout({
         <div className="h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#FF63DD]">
           {/* Left Column (Image with Animation) */}
           <div
-            className={`flex items-center justify-center transition-transform duration-700 ${
-              isInView ? "translate-x-0" : "-translate-x-full"
-            }`}
+            className={`flex items-center justify-center transition-transform duration-700 ${isInView ? "translate-x-0" : "-translate-x-full"
+              }`}
           >
             <img
               src="/vin.svg"
               alt="Apero"
-              className="w-full p-12"
+            />
+            {/* Animated Persil */}
+            <img
+              src="/canape.svg"
+              alt="canape"
+              className={`absolute w-44 h-auto transform transition-transform duration-1000 delay-4000 ${isInView ? "translate-x-40 opacity-100" : "-translate-x-32 opacity-0"
+                }`}
+              style={{
+                bottom: "26%", // Align the bottom of the canapé with the bottom of its parent
+                left: "0", // Adjust horizontal position as needed
+              }}
             />
           </div>
 
