@@ -26,3 +26,12 @@ body {
   background: linear-gradient(135deg, #190095, #3C14FF, #1E90FF, #87CEFA);
   font-family: "Arte", sans-serif;
 }
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

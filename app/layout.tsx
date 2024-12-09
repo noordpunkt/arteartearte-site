@@ -65,9 +65,9 @@ export default function RootLayout({
           {/* Right Column (Image) */}
           <div className="flex items-center justify-center">
             <img
-              src="/musicapero.svg"
-              alt="Apero"
-              className="w-full p-12"
+              src="/disco.svg"
+              alt="Music"
+              className="w-full p-12 animate-spin-slow"
             />
           </div>
         </div>
