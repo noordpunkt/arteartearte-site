@@ -20,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isInView, setIsInView] = useState(false);
+  const [bubbleText, setBubbleText] = useState("Billets");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +37,15 @@ export default function RootLayout({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Text toggle effect for the bubble
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBubbleText((prevText) => (prevText === "Billets" ? "Tickets" : "Billets"));
+    }, 6000); // 6-second interval
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   return (
     <html lang="en">
       <body
@@ -43,6 +53,24 @@ export default function RootLayout({
       >
         {/* Hero Section */}
         <div className="h-screen bg-[#3C14FF] flex items-center justify-end">
+          {/* "Billets" Bubble */}
+          <a
+            href="https://www.eventbrite.fr/e/apero-culturel-arte-arte-arte-tickets-1064830670199?aff=oddtdtcreator"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div
+              className="fixed top-4 left-4 w-44 h-44 flex items-center justify-center text-white font-bold text-2xl z-50"
+              style={{
+                backgroundImage: "url('/billets.svg')", // Path to your SVG file
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                borderRadius: "50%",
+              }}
+            >
+              {bubbleText}
+            </div>
+          </a>
           <img
             src="/artelogo.svg"
             alt="Arte Logo"
