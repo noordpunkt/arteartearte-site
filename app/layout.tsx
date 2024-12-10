@@ -47,11 +47,23 @@ export default function RootLayout({
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
+
+  const colors = [
+    "#FFD700", "#FF4500", "#FF0000", "#FF00C8", "#0000FF", "#00FF00", "#00FFFF",
+  ]; // Colors for the squares
+  const [animationDelays, setAnimationDelays] = useState<number[]>([]);
+
   useEffect(() => {
-    // Generate random durations for each circle
-    const durations = Array.from({ length: 9 }, () => Math.random() * 2 + 2);
-    setCircleDurations(durations); // Store the durations in state
-  }, []); // Run only once on mount
+    // Generate random delays for animation
+    const delays = Array.from({ length: 49 }, () => Math.random() * 2); // 7x7 grid
+    setAnimationDelays(delays);
+  }, []);
+
+  // useEffect(() => {
+  //   // Generate random durations for each circle
+  //   const durations = Array.from({ length: 9 }, () => Math.random() * 2 + 2);
+  //   setCircleDurations(durations); // Store the durations in state
+  // }, []); // Run only once on mount
 
   return (
     <html lang="en">
@@ -89,13 +101,14 @@ export default function RootLayout({
         <div className="h-1/2 sm:h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#3C14FF]">
           {/* Left Column (Aligned Circles with Continuous Animation) */}
           <div className="flex items-center justify-center relative">
-            <div className="grid grid-cols-3 gap-12">
-              {circleDurations.map((duration, i) => (
+            <div className="grid grid-cols-4 gap-2 max-w-xs sm:max-w-sm">
+              {Array.from({ length: 16 }).map((_, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-full w-12 h-12"
+                  className={`w-8 h-8 sm:w-12 sm:h-12 transition-transform duration-500 ease-in-out`}
                   style={{
-                    animation: `circlePulseAnimation ${duration}s ease-in-out infinite`,
+                    backgroundColor: colors[i % colors.length], // Rotate through colors
+                    animation: `squarePulse 1s ${animationDelays[i]}s ease-in-out infinite`,
                   }}
                 ></div>
               ))}
@@ -103,7 +116,7 @@ export default function RootLayout({
           </div>
 
           {/* Right Column (Text) */}
-          <div className="flex flex-col items-start justify-center px-8 pb-12">
+          <div className="flex flex-col items-start justify-center px-8 py-12">
             <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
               Make connections.
             </h1>
