@@ -21,7 +21,6 @@ export default function RootLayout({
 }>) {
   const [isInView, setIsInView] = useState(false);
   const [bubbleText, setBubbleText] = useState("Billets");
-  const [circleDurations, setCircleDurations] = useState<number[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,12 +58,6 @@ export default function RootLayout({
     setAnimationDelays(delays);
   }, []);
 
-  // useEffect(() => {
-  //   // Generate random durations for each circle
-  //   const durations = Array.from({ length: 9 }, () => Math.random() * 2 + 2);
-  //   setCircleDurations(durations); // Store the durations in state
-  // }, []); // Run only once on mount
-
   return (
     <html lang="en">
       <body
@@ -101,7 +94,7 @@ export default function RootLayout({
         <div className="h-1/2 sm:h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#3C14FF]">
           {/* Left Column (Aligned Circles with Continuous Animation) */}
           <div className="flex items-center justify-center relative">
-            <div className="grid grid-cols-4 gap-2 max-w-xs sm:max-w-sm">
+            <div className="grid grid-cols-4 gap-4 max-w-xs sm:max-w-sm">
               {Array.from({ length: 16 }).map((_, i) => (
                 <div
                   key={i}
