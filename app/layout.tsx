@@ -136,13 +136,14 @@ export default function RootLayout({
 
           {/* Right Column (Text) */}
           <div className="flex flex-col items-start justify-center px-8 pb-12">
-            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
+            <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left">
               Apéro au cœur de Nice.
             </h1>
-            <p className="text-xl text-white text-start sm:text-left">
-              Assiette de Fromages et Charcuteries.
-              <br />
-              Buvette sur place.
+            <p className="text-xl text-white text-start sm:text-left pt-6 pb-2">
+              Assiette Ap&eacute;ro. Buvette sur place.
+            </p>
+            <p className="text-base text-white text-start sm:text-left">
+              Apero Platter. Drinks available on site.
             </p>
           </div>
         </div>
@@ -154,9 +155,13 @@ export default function RootLayout({
             <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mt-12">
               Art & Beats.
             </h1>
-            <p className="text-xl text-white text-start sm:text-left">
-              Ambient music and art performances & talks.
+            <p className="text-xl text-white text-start sm:text-left pt-6 pb-2">
+              Musique et performances artistiques.
             </p>
+            <p className="text-base text-white text-start sm:text-left">
+              Ambient music and art performances.
+            </p>
+
           </div>
 
           {/* Right Column (Image) */}
@@ -166,6 +171,53 @@ export default function RootLayout({
               alt="Music"
               className="w-full p-12 animate-spin-slow"
             />
+          </div>
+        </div>
+
+        {/* A propos de nous Section */}
+        <div className="h-auto sm:h-screen py-12 sm:py-24 px-8 sm:px-24 bg-[#111017]">
+          <h2 className="text-center text-4xl sm:text-5xl font-bold mt-4 mb-16">
+            À propos de nous
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+            {/* Column 1: Ieva */}
+            <div className="flex flex-col items-center sm:items-end">
+              <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-12">
+                <img
+                  src="/ieva.png" // Replace with the actual image path
+                  alt="Ieva"
+                  className="w-full h-full object-cover grayscale"
+                />
+              </div>
+              <div className="text-center sm:text-right">
+                <h3 className="text-2xl sm:text-3xl font-bold">Ieva Ake</h3>
+                <p className="text-gray-500 mt-2">
+                  Co-fondatrice d&apos;Arte Arte Arte, Ieva est une passionn&eacute;e
+                  d&apos;art et de culture, d&eacute;di&eacute;e &agrave; connecter
+                  les artistes et amateurs de culture sur la C&ocirc;te d&apos;Azur.
+                  Elle est &eacute;galement laur&eacute;ate du prix de Meilleure Designer
+                  d&apos;Int&eacute;rieur Europ&eacute;enne, reconnue pour ses cr&eacute;ations
+                  qui m&eacute;langent esth&eacute;tique et fonctionalit&eacute;.
+                </p>
+              </div>
+            </div>
+
+            {/* Column 2: Andres */}
+            <div className="flex flex-col items-center sm:items-start">
+              <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-12">
+                <img
+                  src="/andres.png" // Replace with the actual image path
+                  alt="Andres"
+                  className="w-full h-full object-cover grayscale"
+                />
+              </div>
+              <div className="text-center sm:text-left">
+                <h3 className="text-2xl sm:text-3xl font-bold">Andres Buzzio</h3>
+                <p className="text-gray-500 mt-2">
+                  En tant que co-fondateur, Andres met &agrave; profit son expertise en design et innovation, acquise chez des leaders comme Chanel, o&ugrave; il a dirig&eacute; l&apos;application ChanelMe. Il joue un r&ocirc;le cl&eacute; chez Arte Arte Arte en transformant les visions cr&eacute;atives en exp&eacute;riences uniques.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <footer className="w-full bg-[#0f0e18] text-center text-white p-24">
