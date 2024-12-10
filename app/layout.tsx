@@ -21,6 +21,7 @@ export default function RootLayout({
 }>) {
   const [isInView, setIsInView] = useState(false);
   const [bubbleText, setBubbleText] = useState("Billets");
+  const [circleDurations, setCircleDurations] = useState<number[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +46,12 @@ export default function RootLayout({
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
+
+  useEffect(() => {
+    // Generate random durations for each circle
+    const durations = Array.from({ length: 9 }, () => Math.random() * 2 + 2);
+    setCircleDurations(durations); // Store the durations in state
+  }, []); // Run only once on mount
 
   return (
     <html lang="en">
@@ -80,16 +87,21 @@ export default function RootLayout({
 
         {/* Connections Section */}
         <div className="h-1/2 sm:h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#3C14FF]">
-          {/* Left Column (Image with Animation) */}
-          <div
-            className={`flex items-center justify-center transition-transform duration-700 ${isInView ? "translate-x-0" : "-translate-x-full"
-              }`}
-          >
-            <img
-              src="/connections.svg"
-              alt="Connections"
-            />
+          {/* Left Column (Aligned Circles with Continuous Animation) */}
+          <div className="flex items-center justify-center relative">
+            <div className="grid grid-cols-3 gap-12">
+              {circleDurations.map((duration, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-full w-12 h-12"
+                  style={{
+                    animation: `circlePulseAnimation ${duration}s ease-in-out infinite`,
+                  }}
+                ></div>
+              ))}
+            </div>
           </div>
+
           {/* Right Column (Text) */}
           <div className="flex flex-col items-start justify-center px-8 pb-12">
             <h1 className="text-white text-4xl sm:text-6xl font-bold text-center sm:text-left mb-4">
@@ -128,7 +140,7 @@ export default function RootLayout({
             </p>
           </div>
         </div>
-        
+
         {/* Art and Music Section */}
         <div className="h-screen grid grid-cols-1 sm:grid-cols-2 bg-[#3C14FF]">
           {/* Left Column (Text) */}
